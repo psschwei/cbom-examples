@@ -1,0 +1,335 @@
+{
+  "bomFormat" : "CycloneDX",
+  "specVersion" : "1.6",
+  "serialNumber" : "urn:uuid:8f88bed9-e5af-42dc-936e-c71f066a98a1",
+  "version" : 1,
+  "metadata" : {
+    "timestamp" : "2024-10-02T14:46:09Z",
+    "tools" : {
+      "services" : [
+        {
+          "provider" : {
+            "name" : "IBM"
+          },
+          "name" : "Sonar Cryptography Plugin",
+          "version" : "1.3.2"
+        }
+      ]
+    }
+  },
+  "components" : [
+    {
+      "type" : "cryptographic-asset",
+      "bom-ref" : "f52482d1-2948-40d0-859a-16584911591d",
+      "name" : "SHA256",
+      "evidence" : {
+        "occurrences" : [
+          {
+            "line" : 51,
+            "offset" : 38,
+            "additionalContext" : "java.security.MessageDigest#getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;",
+            "location" : "src/main/java/com/mastercard/developer/encryption/EncryptionConfigBuilder.java"
+          }
+        ]
+      },
+      "cryptoProperties" : {
+        "assetType" : "algorithm",
+        "algorithmProperties" : {
+          "primitive" : "hash",
+          "parameterSetIdentifier" : "256",
+          "cryptoFunctions" : [
+            "digest"
+          ]
+        },
+        "oid" : "2.16.840.1.101.3.4.2.1"
+      }
+    },
+    {
+      "type" : "cryptographic-asset",
+      "bom-ref" : "d33b085f-d735-433b-bdf0-ade03e30565f",
+      "name" : "RSA",
+      "evidence" : {
+        "occurrences" : [
+          {
+            "line" : 27,
+            "offset" : 28,
+            "additionalContext" : "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;",
+            "location" : "src/main/java/com/mastercard/developer/encryption/rsa/RSA.java"
+          }
+        ]
+      },
+      "cryptoProperties" : {
+        "assetType" : "algorithm",
+        "algorithmProperties" : {
+          "primitive" : "pke",
+          "mode" : "ecb",
+          "padding" : "oaep",
+          "cryptoFunctions" : [
+            "encapsulate"
+          ]
+        },
+        "oid" : "1.2.840.113549.1.1.1"
+      }
+    },
+    {
+      "type" : "cryptographic-asset",
+      "bom-ref" : "a50408ee-b02c-45c3-b18d-4ecb15f34af4",
+      "name" : "key@a50408ee-b02c-45c3-b18d-4ecb15f34af4",
+      "evidence" : {
+        "occurrences" : [
+          {
+            "line" : 84,
+            "offset" : 32,
+            "additionalContext" : "java.security.KeyFactory#getInstance(Ljava/lang/String;)Ljava/security/KeyFactory;",
+            "location" : "src/main/java/com/mastercard/developer/utils/EncryptionUtils.java"
+          }
+        ]
+      },
+      "cryptoProperties" : {
+        "assetType" : "related-crypto-material",
+        "relatedCryptoMaterialProperties" : {
+          "type" : "secret-key"
+        }
+      }
+    },
+    {
+      "type" : "cryptographic-asset",
+      "bom-ref" : "f6b152e4-a1c7-496e-87a4-bb2cd67dd316",
+      "name" : "secret-key@f6b152e4-a1c7-496e-87a4-bb2cd67dd316",
+      "evidence" : {
+        "occurrences" : [
+          {
+            "line" : 74,
+            "offset" : 31,
+            "additionalContext" : "javax.crypto.spec.SecretKeySpec#<init>([BLjava/lang/String;)V",
+            "location" : "src/main/java/com/mastercard/developer/encryption/jwe/JweObject.java"
+          }
+        ]
+      },
+      "cryptoProperties" : {
+        "assetType" : "related-crypto-material",
+        "relatedCryptoMaterialProperties" : {
+          "type" : "secret-key"
+        }
+      }
+    },
+    {
+      "type" : "cryptographic-asset",
+      "bom-ref" : "be3c521b-4e9c-4108-97ee-b217d04182e9",
+      "name" : "secret-key@be3c521b-4e9c-4108-97ee-b217d04182e9",
+      "evidence" : {
+        "occurrences" : [
+          {
+            "line" : 32,
+            "offset" : 15,
+            "additionalContext" : "javax.crypto.spec.SecretKeySpec#<init>([BLjava/lang/String;)V",
+            "location" : "src/main/java/com/mastercard/developer/encryption/aes/AESEncryption.java"
+          }
+        ]
+      },
+      "cryptoProperties" : {
+        "assetType" : "related-crypto-material",
+        "relatedCryptoMaterialProperties" : {
+          "type" : "secret-key"
+        }
+      }
+    },
+    {
+      "type" : "cryptographic-asset",
+      "bom-ref" : "2b87f7aa-914d-4c44-ba33-e0065a75534b",
+      "name" : "AES128-CBC-PKCS5",
+      "evidence" : {
+        "occurrences" : [
+          {
+            "line" : 31,
+            "offset" : 24,
+            "additionalContext" : "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;",
+            "location" : "src/main/java/com/mastercard/developer/encryption/aes/AESCBC.java"
+          }
+        ]
+      },
+      "cryptoProperties" : {
+        "assetType" : "algorithm",
+        "algorithmProperties" : {
+          "primitive" : "block-cipher",
+          "parameterSetIdentifier" : "128",
+          "mode" : "cbc",
+          "padding" : "pkcs5"
+        },
+        "oid" : "2.16.840.1.101.3.4.1"
+      }
+    },
+    {
+      "type" : "cryptographic-asset",
+      "bom-ref" : "5ba9298f-383e-4db5-ab47-852d7145b9db",
+      "name" : "AES128",
+      "evidence" : {
+        "occurrences" : [
+          {
+            "line" : 32,
+            "offset" : 15,
+            "additionalContext" : "javax.crypto.spec.SecretKeySpec#<init>([BLjava/lang/String;)V",
+            "location" : "src/main/java/com/mastercard/developer/encryption/aes/AESEncryption.java"
+          },
+          {
+            "line" : 112,
+            "offset" : 37,
+            "additionalContext" : "javax.crypto.KeyGenerator#getInstance(Ljava/lang/String;)Ljavax/crypto/KeyGenerator;",
+            "location" : "src/main/java/com/mastercard/developer/encryption/FieldLevelEncryptionParams.java"
+          },
+          {
+            "line" : 74,
+            "offset" : 31,
+            "additionalContext" : "javax.crypto.spec.SecretKeySpec#<init>([BLjava/lang/String;)V",
+            "location" : "src/main/java/com/mastercard/developer/encryption/jwe/JweObject.java"
+          }
+        ]
+      },
+      "cryptoProperties" : {
+        "assetType" : "algorithm",
+        "algorithmProperties" : {
+          "primitive" : "block-cipher",
+          "parameterSetIdentifier" : "128",
+          "cryptoFunctions" : [
+            "keygen"
+          ]
+        },
+        "oid" : "2.16.840.1.101.3.4.1"
+      }
+    },
+    {
+      "type" : "cryptographic-asset",
+      "bom-ref" : "652d769c-3d8f-4192-8db2-fe7191836952",
+      "name" : "RSA-OAEP",
+      "evidence" : {
+        "occurrences" : [
+          {
+            "line" : 27,
+            "offset" : 28,
+            "additionalContext" : "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;",
+            "location" : "src/main/java/com/mastercard/developer/encryption/rsa/RSA.java"
+          },
+          {
+            "line" : 42,
+            "offset" : 28,
+            "additionalContext" : "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;",
+            "location" : "src/main/java/com/mastercard/developer/encryption/rsa/RSA.java"
+          }
+        ]
+      },
+      "cryptoProperties" : {
+        "assetType" : "algorithm",
+        "algorithmProperties" : {
+          "primitive" : "pke",
+          "parameterSetIdentifier" : "2048",
+          "mode" : "ecb",
+          "padding" : "oaep",
+          "cryptoFunctions" : [
+            "encapsulate"
+          ]
+        },
+        "oid" : "1.2.840.113549.1.1.7"
+      }
+    },
+    {
+      "type" : "cryptographic-asset",
+      "bom-ref" : "befc425c-fe51-4afe-840d-5dfa7c135240",
+      "name" : "secret-key@befc425c-fe51-4afe-840d-5dfa7c135240",
+      "evidence" : {
+        "occurrences" : [
+          {
+            "line" : 112,
+            "offset" : 37,
+            "additionalContext" : "javax.crypto.KeyGenerator#getInstance(Ljava/lang/String;)Ljavax/crypto/KeyGenerator;",
+            "location" : "src/main/java/com/mastercard/developer/encryption/FieldLevelEncryptionParams.java"
+          }
+        ]
+      },
+      "cryptoProperties" : {
+        "assetType" : "related-crypto-material",
+        "relatedCryptoMaterialProperties" : {
+          "type" : "secret-key"
+        }
+      }
+    },
+    {
+      "type" : "cryptographic-asset",
+      "bom-ref" : "e4e7351e-d6f3-4448-ac04-7f4eb7879198",
+      "name" : "AES128-GCM",
+      "evidence" : {
+        "occurrences" : [
+          {
+            "line" : 29,
+            "offset" : 24,
+            "additionalContext" : "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;",
+            "location" : "src/main/java/com/mastercard/developer/encryption/aes/AESGCM.java"
+          }
+        ]
+      },
+      "cryptoProperties" : {
+        "assetType" : "algorithm",
+        "algorithmProperties" : {
+          "primitive" : "ae",
+          "parameterSetIdentifier" : "128",
+          "mode" : "gcm",
+          "cryptoFunctions" : [
+            "decrypt"
+          ]
+        },
+        "oid" : "2.16.840.1.101.3.4.1"
+      }
+    },
+    {
+      "type" : "cryptographic-asset",
+      "bom-ref" : "064969b7-9db6-42fb-bc94-4216353abdbd",
+      "name" : "RSA-2048",
+      "evidence" : {
+        "occurrences" : [
+          {
+            "line" : 84,
+            "offset" : 32,
+            "additionalContext" : "java.security.KeyFactory#getInstance(Ljava/lang/String;)Ljava/security/KeyFactory;",
+            "location" : "src/main/java/com/mastercard/developer/utils/EncryptionUtils.java"
+          }
+        ]
+      },
+      "cryptoProperties" : {
+        "assetType" : "algorithm",
+        "algorithmProperties" : {
+          "primitive" : "pke",
+          "parameterSetIdentifier" : "2048",
+          "cryptoFunctions" : [
+            "keygen"
+          ]
+        },
+        "oid" : "1.2.840.113549.1.1.1"
+      }
+    }
+  ],
+  "dependencies" : [
+    {
+      "ref" : "befc425c-fe51-4afe-840d-5dfa7c135240",
+      "dependsOn" : [
+        "5ba9298f-383e-4db5-ab47-852d7145b9db"
+      ]
+    },
+    {
+      "ref" : "a50408ee-b02c-45c3-b18d-4ecb15f34af4",
+      "dependsOn" : [
+        "064969b7-9db6-42fb-bc94-4216353abdbd"
+      ]
+    },
+    {
+      "ref" : "be3c521b-4e9c-4108-97ee-b217d04182e9",
+      "dependsOn" : [
+        "5ba9298f-383e-4db5-ab47-852d7145b9db"
+      ]
+    },
+    {
+      "ref" : "f6b152e4-a1c7-496e-87a4-bb2cd67dd316",
+      "dependsOn" : [
+        "5ba9298f-383e-4db5-ab47-852d7145b9db"
+      ]
+    }
+  ]
+}
